@@ -2,7 +2,7 @@
 
 ## 📌 Overview
 
-This case study presents a scalable, resilient, and automated data architecture designed to solve real-world data challenges faced by Pulse Corp—a hypothetical consumer electronics e-commerce organization. The focus is on building robust pipelines, ensuring data quality, handling schema evolution, and enabling real-time analytics using modern data engineering practices.
+This case study showcases a robust, scalable data architecture built for Pulse Corp, an e-commerce company dealing with consumer electronics. The objective is to ensure real-time analytics, schema flexibility, zero manual intervention, and trusted reporting through automated data pipelines built on Azure.
 
 ---
 
@@ -10,103 +10,94 @@ This case study presents a scalable, resilient, and automated data architecture 
 
 ### 🏢 Company Background
 
-Pulse Corp is a mid-sized retail company specializing in selling consumer electronics through its online platform. With a growing customer base and a diverse product catalog, the company aims to enhance operational efficiency and customer experience through data-driven decision-making.
+Pulse Corp is a mid-sized retail company specializing in selling consumer electronics through its online platform. With a growing customer base and a wide product range, the company aims to improve operational efficiency and customer experience through better data insights.
 
 ---
 
 ### 📈 Business Problem
 
-- Pulse Corp struggles to maintain **accurate and consistent data** about its products, inventory, and sales across multiple systems.
-- The company seeks a **robust data management solution** to support:
-  - Real-time and historical analytics
-  - High-integrity reporting
-  - Scalable ingestion and transformation of growing datasets
-- The task is to **analyze and transform the provided dataset** to uncover actionable business insights.
+- Inconsistent product, inventory, and sales data across systems.
+- Lack of reliable and timely analytics for operations and business reporting.
+- Need for automated pipelines to scale with data volume and evolving schemas.
 
 ---
 
 ### ⚙️ Technical Problem
 
-- Data is **refreshed in real time**, and the analytics team requires **up-to-date access**.
-- For **reporting**, the system can tolerate a **1-day delay**.
-- The solution must be:
-  - **Zero-click**: Fully automated with no manual triggers
-  - **Scalable**: Able to grow with business needs and data volume
-  - **Schema-flexible**: Must **automatically adapt** to changes in input file schema without modifying the ingestion pipeline
-  - **Transparent**: Data quality issues must be logged and reported **during the process**
+- **Real-time data availability** for analytics; **1-day tolerance** for reporting.
+- **Zero-click pipelines** with automated validation and error logging.
+- **Schema evolution support**: Input files can change (column order or new columns) without needing pipeline modifications.
 
 ---
 
-## 👨‍💻 Author
+## ✅ My Solution Strategy
+
+### 💡 How This Architecture Supports Pulse Corp
+
+- **Real-Time Analytics**: Achieved using Azure Databricks streaming for dashboards and ad-hoc analysis.
+- **Daily Reporting**: Curated Gold Layer supports Power BI, refreshed daily.
+- **Data Quality**: Cleaned and validated in Silver Layer, with automated DQ checks.
+- **Zero Manual Effort**: Triggered pipelines + monitoring via Azure Monitor ensure 0-click operations.
+- **Schema Flexibility**: Auto Loader with `mergeSchema=true` supports schema changes.
+- **Scalable & Modular**: Follows Medallion Architecture (Bronze → Silver → Gold) for clear separation of concerns.
+
+---
+
+## 🧱 Architecture Diagrams
+
+> Add these three diagrams in the `assets/` folder:
+> - `ingestion_architecture.png`
+> - `data_quality_architecture.png`
+> - `medallion_overview.png`
+
+| Ingestion Architecture | Data Quality Framework | Medallion Overview |
+|------------------------|------------------------|--------------------|
+| ![Ingestion](assets/ingestion_architecture.png) | ![DQ](assets/data_quality_architecture.png) | ![Medallion](assets/medallion_overview.png) |
+
+---
+
+## 🏗️ Technical Stack
+
+- **Cloud**: Azure Data Factory, Azure Data Lake Gen2, Azure Monitor
+- **Processing**: Databricks, PySpark, Delta Lake
+- **Data Quality**: Built-in validation rules, error zones, DQ reports
+- **BI & Reporting**: Power BI
+- **Dev Principles**: Schema evolution support, modular pipelines, alerting and observability
+
+---
+
+
+---
+
+## 📊 Sample Business Questions Answered
+
+- 🏪 What’s the current stock of Product X in Warehouse Y?
+- 💰 What revenue has Category A generated YTD and LTD?
+- 📈 How are sales and inventory trending across products and time?
+
+---
+
+## 🧠 Key Learnings & Impact
+
+- ⚙️ End-to-end Azure pipeline development with schema-evolution tolerance
+- ✅ Real-world scalable DQ automation using PySpark
+- 📐 SCD2 modeling in Delta for history and accuracy
+- 🔍 Transparent logs and alerting with Azure Monitor
+- 🚀 BI-ready Gold Layer powering real-time dashboards and reports
+
+---
+
+## 👨‍💻 About Me
 
 **Nitesh Ranjan Singh**  
-Data Engineer | Azure | PySpark | Delta Lake | Power BI  
-[LinkedIn](https://www.linkedin.com/in/nitesh0007/) • [Email](mailto:niteshranjansingh85389@gmail.com)
+Data Engineer @ IQVIA | Azure | PySpark | Delta Lake | Power BI  
+📧 [niteshranjansingh85389@gmail.com](mailto:niteshranjansingh85389@gmail.com)  
+🔗 [LinkedIn](https://www.linkedin.com/in/nitesh0007/)
 
 ---
 
-## 🛠️ Tech Stack
+## 📄 License
 
-- **Cloud & Orchestration**: Azure Data Factory, Azure Databricks, Azure Monitor
-- **Processing & Storage**: PySpark, Delta Lake, Azure Data Lake Storage Gen2
-- **Monitoring & Observability**: Azure Log Analytics
-- **Analytics**: Power BI
-- **Development Practices**: CI/CD-ready, schema evolution support, modular pipeline design
-
----
-
-## 🏗️ Solution Architecture
-
-The data platform follows the **Medallion Architecture**:
-- **Bronze Layer**: Raw data ingestion via ADF + Databricks Auto Loader
-- **Silver Layer**: Cleansed data with DQ validation using PySpark
-- **Gold Layer**: Curated datamarts for Power BI dashboards and reporting
-
-Key Features:
-- Real-time ingestion with auto schema evolution
-- End-to-end data quality framework with alerting and auditability
-- SCD Type-2 dimension modeling for historical accuracy
-- Fact tables that enable YTD/LTD metrics and trend analytics
-
----
-
-
----
-
-## 📊 Business Impact
-
-- ✅ Real-time dashboards for operational users
-- ✅ Daily reports with high integrity for business stakeholders
-- ✅ 0-click automation and full pipeline observability
-- ✅ Future-proof design handling changing schemas effortlessly
-
----
-
-## 🔍 Sample Use Cases Solved
-
-- "What’s the current stock of Product X in Warehouse Y?"
-- "What are LTD vs YTD revenue trends per product?"
-- "How much revenue did Category A generate this year?"
-
----
-
-## 🧠 Key Learnings
-
-This case study showcases:
-- Medallion architecture implementation in Azure
-- Hands-on application of PySpark and Delta Lake for scalable processing
-- Real-world problem solving for schema evolution, data quality, and auditability
-- Dimensional modeling using SCD2 for historical traceability
-
----
-
-## 📞 Contact
-
-If you're a recruiter or hiring manager and would like to know more, feel free to connect!
-
-📧 niteshranjansingh85389@gmail.com  
-🌐 [LinkedIn](https://www.linkedin.com/in/nitesh0007/)
-
----
+This project is open-source and available under the [MIT License](LICENSE).
 
 
