@@ -2,7 +2,38 @@
 
 ## 📌 Overview
 
-This case study presents a scalable, resilient, and automated data architecture designed to solve real-world data challenges faced by Pulse Corp—a hypothetical pharmaceutical organization. The focus is on building robust pipelines, ensuring data quality, handling schema evolution, and enabling real-time analytics using modern data engineering practices.
+This case study presents a scalable, resilient, and automated data architecture designed to solve real-world data challenges faced by Pulse Corp—a hypothetical consumer electronics e-commerce organization. The focus is on building robust pipelines, ensuring data quality, handling schema evolution, and enabling real-time analytics using modern data engineering practices.
+
+---
+
+## 🚨 Problem Statement
+
+### 🏢 Company Background
+
+Pulse Corp is a mid-sized retail company specializing in selling consumer electronics through its online platform. With a growing customer base and a diverse product catalog, the company aims to enhance operational efficiency and customer experience through data-driven decision-making.
+
+---
+
+### 📈 Business Problem
+
+- Pulse Corp struggles to maintain **accurate and consistent data** about its products, inventory, and sales across multiple systems.
+- The company seeks a **robust data management solution** to support:
+  - Real-time and historical analytics
+  - High-integrity reporting
+  - Scalable ingestion and transformation of growing datasets
+- The task is to **analyze and transform the provided dataset** to uncover actionable business insights.
+
+---
+
+### ⚙️ Technical Problem
+
+- Data is **refreshed in real time**, and the analytics team requires **up-to-date access**.
+- For **reporting**, the system can tolerate a **1-day delay**.
+- The solution must be:
+  - **Zero-click**: Fully automated with no manual triggers
+  - **Scalable**: Able to grow with business needs and data volume
+  - **Schema-flexible**: Must **automatically adapt** to changes in input file schema without modifying the ingestion pipeline
+  - **Transparent**: Data quality issues must be logged and reported **during the process**
 
 ---
 
@@ -39,31 +70,15 @@ Key Features:
 
 ---
 
+
+---
+
 ## 📊 Business Impact
 
 - ✅ Real-time dashboards for operational users
 - ✅ Daily reports with high integrity for business stakeholders
 - ✅ 0-click automation and full pipeline observability
 - ✅ Future-proof design handling changing schemas effortlessly
-
----
-
-## 📁 Repository Structure
-📦pulsecorp-case-study/
-├── 📁 assets/
-│ └── architecture_diagram.png # Visual architecture diagram (optional)
-├── 📁 notebooks/
-│ ├── dq_checks.ipynb # PySpark code for data quality
-│ ├── ingestion_pipeline.ipynb # Ingestion logic using ADF + Auto Loader
-│ └── dimensional_modeling.ipynb # SCD2 logic and datamart construction
-├── 📁 datasets/
-│ ├── product.csv # Sample input data
-│ ├── sales.csv
-│ └── inventory.csv
-├── 📁 reports/
-│ └── PulseCorp_CaseStudy_Presentation.pdf # Converted PDF of final presentation
-├── README.md
-└── LICENSE (optional)
 
 ---
 
@@ -89,7 +104,9 @@ This case study showcases:
 
 If you're a recruiter or hiring manager and would like to know more, feel free to connect!
 
-📧 niteshranjansingh99@gmail.com  
-🌐 [LinkedIn](https://linkedin.com/in/nitesh-ranjan-singh)
+📧 niteshranjansingh85389@gmail.com  
+🌐 [LinkedIn](https://www.linkedin.com/in/nitesh0007/)
 
 ---
+
+
